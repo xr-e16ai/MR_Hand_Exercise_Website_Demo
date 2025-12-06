@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MR Hand Exercise VR App - Improve Hand Strength & Mobility</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-hands"></i>
+                    <span>MR Hand Exercise</span>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#description">App</a></li>
+                        <li><a href="#stages">Stages</a></li>
+                        <li><a href="#apk-info">APK Info</a></li>
+                        <li><a href="#installation">Install</a></li>
+                        <li><a href="#media">Media</a></li>
+                        <li><a href="#download" class="btn btn-primary">Download</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="particles" id="particles"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text fade-in">
+                    <h1>MR Hand Exercise VR App – Improve Hand Strength & Mobility</h1>
+                    <p>A VR-based rehabilitation system for people with limited hand mobility.</p>
+                    <div class="hero-buttons">
+                        <a href="#download" class="btn btn-primary animate__animated animate__pulse animate__infinite animate__slower">Download APK</a>
+                        <a href="#description" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-image fade-in">
+                    <img src="images\wmremove-transformed (5).png" alt="VR Hand Exercise App">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Description Section -->
+    <section class="description" id="description">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>App Description</h2>
+                <p>Discover how MR Hand Exercise can transform rehabilitation therapy</p>
+            </div>
+            
+            <div class="description-content">
+                <div class="description-text fade-in">
+                    <p>The MR Hand Exercise app is designed for Meta Quest VR headsets and accessories, specifically created for individuals with limited hand mobility who require daily hand-exercise therapy.</p>
+                    <p>Our innovative system helps users strengthen hand muscles with guided exercises, incorporating motivational music, interactive avatars, and real-time feedback systems. Using MR + pass-through technology to track hand movements, the app provides a comprehensive rehabilitation experience.</p>
+                    <p>The first prototype features a 3D avatar that guides users through hand-grip routines, making therapy engaging and effective.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-vr-cardboard"></i>
+                            <div>
+                                <h3>VR Immersive Experience</h3>
+                                <p>Fully immersive VR environment for effective therapy sessions</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-hand-paper"></i>
+                            <div>
+                                <h3>Hand Tracking</h3>
+                                <p>Advanced MR + pass-through technology for precise movement tracking</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-user-md"></i>
+                            <div>
+                                <h3>Therapy Focused</h3>
+                                <p>Designed specifically for rehabilitation and mobility improvement</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-music"></i>
+                            <div>
+                                <h3>Motivational Elements</h3>
+                                <p>Guided exercises with music and interactive feedback systems</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="description-image fade-in">
+                    <img src="images\wmremove-transformed (6).png" alt="VR Therapy App Interface">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exercise Stages Section -->
+    <section class="stages" id="stages">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Exercise Stages</h2>
+                <p>Progressive hand-grip exercises designed for gradual strength improvement</p>
+            </div>
+            
+            <div class="stages-container">
+                <div class="stage-card fade-in">
+                    <div class="stage-icon">
+                        <i class="fas fa-hand-rock"></i>
+                    </div>
+                    <div class="stage-number">1</div>
+                    <h3>0 to 0.5mm Pressure Grip</h3>
+                    <p>Beginner level for light pressure control and initial hand mobility exercises.</p>
+                    <ul style="text-align: left; margin-top: 15px; color: var(--text-light);">
+                        <li>Light pressure control</li>
+                        <li>10 counts of hand squeezes</li>
+                        <li>Focus on finger extension</li>
+                        <li>Guided breathing exercises</li>
+                    </ul>
+                </div>
+                
+                <div class="stage-card fade-in">
+                    <div class="stage-icon">
+                        <i class="fas fa-hand-peace"></i>
+                    </div>
+                    <div class="stage-number">2</div>
+                    <h3>0 to 1mm Pressure Grip</h3>
+                    <p>Intermediate level for moderate pressure and improved hand coordination.</p>
+                    <ul style="text-align: left; margin-top: 15px; color: var(--text-light);">
+                        <li>Moderate pressure control</li>
+                        <li>Another set of 10 counts</li>
+                        <li>Increased resistance</li>
+                        <li>Coordination exercises</li>
+                    </ul>
+                </div>
+                
+                <div class="stage-card fade-in">
+                    <div class="stage-icon">
+                        <i class="fas fa-fist-raised"></i>
+                    </div>
+                    <div class="stage-number">3</div>
+                    <h3>0 to 1.5mm Full Grip</h3>
+                    <p>Advanced level for full strength grip and complete hand mobility restoration.</p>
+                    <ul style="text-align: left; margin-top: 15px; color: var(--text-light);">
+                        <li>Full strength grip</li>
+                        <li>10 counts with maximum pressure</li>
+                        <li>Complete range of motion</li>
+                        <li>Endurance building</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APK Information Section -->
+    <section class="apk-info" id="apk-info">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>APK Information</h2>
+                <p>Technical details and specifications for the MR Hand Exercise app</p>
+            </div>
+            
+            <div class="info-card fade-in">
+                <div class="info-item">
+                    <div class="info-label">APK Name:</div>
+                    <div class="info-value">MR Hand Exercise VR App</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Version:</div>
+                    <div class="info-value">1.0 (Release Candidate)</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Package Type:</div>
+                    <div class="info-value">Android APK</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Supported Device:</div>
+                    <div class="info-value">Meta Quest VR (Quest 2, Quest Pro, Quest 3)</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">File Size:</div>
+                    <div class="info-value">Approximately 85 MB</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Minimum Requirements:</div>
+                    <div class="info-value">Meta Quest with hand tracking enabled, Developer mode activated</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Release Date:</div>
+                    <div class="info-value">October 2023</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Developer:</div>
+                    <div class="info-value">MR Rehabilitation Technologies</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Guide Section -->
+    <section class="installation" id="installation">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Installation Guide</h2>
+                <p>Follow these simple steps to install the APK on your Meta Quest device</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step fade-in">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h3>Download the APK</h3>
+                        <p>Click the download button on this website to get the MR Hand Exercise APK file on your computer.</p>
+                    </div>
+                </div>
+                
+                <div class="step fade-in">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3>Connect Meta Quest to PC</h3>
+                        <p>Use a USB-C cable to connect your Meta Quest VR headset to your computer. Ensure the headset is turned on.</p>
+                    </div>
+                </div>
+                
+                <div class="step fade-in">
+                    <div class="step-number">3</div>
+                    <div>
+                        <h3>Enable Developer Mode</h3>
+                        <p>In the Meta Quest mobile app, go to Settings → Developer Mode and enable it. You may need to create a developer organization first.</p>
+                    </div>
+                </div>
+                
+                <div class="step fade-in">
+                    <div class="step-number">4</div>
+                    <div>
+                        <h3>Install SideQuest (Optional)</h3>
+                        <p>Download and install SideQuest on your computer for easier APK installation. This is recommended for beginners.</p>
+                    </div>
+                </div>
+                
+                <div class="step fade-in">
+                    <div class="step-number">5</div>
+                    <div>
+                        <h3>Sideload the APK</h3>
+                        <p>Use SideQuest or ADB commands to sideload the APK file to your Meta Quest device.</p>
+                    </div>
+                </div>
+                
+                <div class="step fade-in">
+                    <div class="step-number">6</div>
+                    <div>
+                        <h3>Open the App in VR</h3>
+                        <p>Put on your headset, go to Unknown Sources in your library, and launch the MR Hand Exercise app.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Section -->
+    <section class="media" id="media">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>App Media</h2>
+                <p>Visual preview of the MR Hand Exercise application interface and features</p>
+            </div>
+            
+            <div class="media-grid">
+                <div class="media-item fade-in">
+                    <img src="images\wmremove-transformed (2).png" alt="VR App Interface 1">
+                </div>
+                <div class="media-item fade-in">
+                    <img src="images\wmremove-transformed.png" alt="VR App Interface 2">
+                </div>
+                <div class="media-item fade-in">
+                    <img src="images\wmremove-transformed (1).png" alt="VR App Interface 3">
+                </div>
+                <div class="media-item fade-in">
+                    <img src="images\wmremove-transformed (3).png" alt="VR Hand Tracking">
+                </div>
+                <div class="media-item fade-in">
+                    <img src="images\wmremove-transformed (4).png" alt="VR Rehabilitation">
+                </div>
+                <div class="media-item fade-in">
+                    <img src="images\wmremove-transformed (7).png" alt="VR Therapy">
+                </div>
+            </div>
+            
+            <div class="video-container fade-in">
+                <div class="video-placeholder">
+                    <i class="fas fa-play-circle"></i>
+                    <h3>MR Hand Exercise Demo</h3>
+                    <p>Video demonstration of the app in action (Replace with embedded YouTube video)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download-section" id="download">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Download Now</h2>
+                <p>Start your hand rehabilitation journey with MR Hand Exercise</p>
+            </div>
+            
+            <p>Click the button below to download the APK file. After downloading, follow the installation guide to set up the app on your Meta Quest VR headset.</p>
+            
+            <!-- Replace the href with your actual APK file link -->
+            <a href="apk\MR.apk" class="download-btn-large" id="downloadBtn" download>
+                <i class="fas fa-download"></i> Download APK Now (v1.0)
+            </a>
+            
+            <div class="download-info">
+                <p><i class="fas fa-shield-alt"></i> Safe & Secure Download | File Size: ~85 MB | Version: 1.0</p>
+                <p>Compatible with Meta Quest 2, Quest Pro, and Quest 3</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>MR Hand Exercise</h3>
+                    <p>A VR-based rehabilitation system designed to help people with limited hand mobility improve strength and coordination through guided exercises.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#description">App Description</a></li>
+                        <li><a href="#stages">Exercise Stages</a></li>
+                        <li><a href="#apk-info">APK Information</a></li>
+                        <li><a href="#installation">Installation Guide</a></li>
+                        <li><a href="#media">Media Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact & Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+919840034916"><i class="fas fa-phone"></i> +91 98400 34916</a></li>
+                        <li><a href="mailto:info@e16ai.com"><i class="fas fa-envelope"></i> info@e16ai.com</a></li>
+                        <li><a href="https://e16ai.com" target="_blank"><i class="fas fa-globe"></i> https://e16ai.com</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i> FAQ & Help Center</a></li>
+                        <li><a href="#"><i class="fas fa-file-alt"></i> Documentation</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 MR Hand Exercise. All rights reserved. | Meta Quest is a trademark of Meta Platforms, Inc.</p>
+                <p>This app is for rehabilitation purposes. Consult with a healthcare professional before beginning any exercise program.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
