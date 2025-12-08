@@ -1,4 +1,6 @@
 // JavaScript for interactive elements
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -125,4 +127,28 @@ document.addEventListener('DOMContentLoaded', function() {
         void downloadButton.offsetWidth; // Trigger reflow
         downloadButton.classList.add('animate__pulse');
     }, 4000);
+
+
+        // Video Modal Controls
+    const videoModal = document.getElementById("videoModal");
+    const demoVideo = document.getElementById("demoVideo");
+    const videoCard = document.querySelector(".video-card");
+    const closeBtn = document.querySelector(".close-btn");
+
+    function openVideoModal() {
+        videoModal.style.display = "flex";
+        demoVideo.play();
+    }
+
+    function closeVideoModal() {
+        videoModal.style.display = "none";
+        demoVideo.pause();
+    }
+
+    // Open modal when clicking the video card
+    videoCard.addEventListener("click", openVideoModal);
+
+    // Close when clicking × button
+    closeBtn.addEventListener("click", closeVideoModal);
+
 });

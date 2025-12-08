@@ -301,13 +301,26 @@
                 </div>
             </div>
             
-            <div class="video-container fade-in">
-                <div class="video-placeholder">
-                    <i class="fas fa-play-circle"></i>
-                    <h3>MR Hand Exercise Demo</h3>
-                    <p>C:\Users\E16 Rig\Documents\MR-Hand-Exercise-Website\Meta MR - 2.mp4</p>
-                </div>
-            </div>
+            <!-- Video Card -->
+<div class="video-card fade-in" onclick="openVideoModal()">
+    <div class="video-card-content">
+        <i class="fas fa-play-circle play-icon"></i>
+        <h3>MR Hand Exercise Demo</h3>
+        <p>Click to watch the demo</p>
+    </div>
+</div>
+
+<!-- Video Modal -->
+<div id="videoModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeVideoModal()">&times;</span>
+        <video id="demoVideo" controls>
+            <source src="/Meta MR - 2.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+
+
         </div>
     </section>
 
