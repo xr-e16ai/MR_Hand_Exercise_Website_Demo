@@ -1,4 +1,5 @@
 // JavaScript for interactive elements
+/* global emailjs */
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -73,24 +74,8 @@ document.addEventListener('DOMContentLoaded', function() {
         appearOnScroll.observe(element);
     });
     
-    // Download button functionality
-    const downloadBtn = document.getElementById('downloadBtn');
-    
-    downloadBtn.addEventListener('click', function(e) {
-        // For demo purposes - in production, this would be the actual APK file
-        if (!downloadBtn.getAttribute('href') || downloadBtn.getAttribute('href') === '#') {
-            e.preventDefault();
-            alert('APK download link configured. Place your APK file in the apk/ folder and name it mr-hand-exercise-v1.0.apk');
-            
-            // Simulate download for demo (remove in production)
-            const link = document.createElement('a');
-            link.href = '#';
-            link.download = 'mr-hand-exercise-v1.0.apk';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-    });
+    // Download form modal logic
+    // (openDownloadForm / closeDownloadForm / handleDownloadSubmit are global so onclick="" attributes work)
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -152,3 +137,88 @@ document.addEventListener('DOMContentLoaded', function() {
     closeBtn.addEventListener("click", closeVideoModal);
 
 });
+
+// ── Download Lead-Form Modal ──────────────────────────────────────────────────
+
+function openDownloadForm() {
+    const modal = document.getElementById('downloadFormModal');
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('downloadLeadForm').reset();
+    document.getElementById('dl_form_error').style.display = 'none';
+    const btn = document.getElementById('dlSubmitBtn');
+    btn.disabled = false;
+    document.getElementById('dlSubmitText').textContent = 'Submit & Download APK';
+}
+
+function closeDownloadForm() {
+    document.getElementById('downloadFormModal').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+function closeDLModalOnOverlay(event) {
+    if (event.target === document.getElementById('downloadFormModal')) {
+        closeDownloadForm();
+    }
+}
+
+function handleDownloadSubmit(event) {
+    event.preventDefault();
+
+    const name        = document.getElementById('dl_name').value.trim();
+    const email       = document.getElementById('dl_email').value.trim();
+    const countryCode = document.getElementById('dl_country_code').value;
+    const phone       = document.getElementById('dl_phone').value.trim();
+    const errorBox    = document.getElementById('dl_form_error');
+
+    // Basic validation
+    if (!name || !email || !phone) {
+        errorBox.textContent = 'Please fill in all required fields.';
+        errorBox.style.display = 'block';
+        return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        errorBox.textContent = 'Please enter a valid email address.';
+        errorBox.style.display = 'block';
+        return;
+    }
+
+    errorBox.style.display = 'none';
+
+    const submitBtn = document.getElementById('dlSubmitBtn');
+    const submitText = document.getElementById('dlSubmitText');
+    submitBtn.disabled = true;
+    submitText.textContent = 'Sending…';
+
+    const templateParams = {
+        from_name:    name,
+        from_email:   email,
+        phone:        countryCode + ' ' + phone,
+        to_email:     'info@e16ai.com',
+        reply_to:     email
+    };
+
+    emailjs.send('service_7m006uh', 'template_4o1vblh', templateParams)
+        .then(function() {
+            submitText.textContent = 'Starting download…';
+            // Trigger APK download
+            const link = document.createElement('a');
+            link.href = 'apk/MR.apk';
+            link.download = 'MR.apk';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            // Close modal after short delay
+            setTimeout(closeDownloadForm, 1500);
+        })
+        .catch(function(err) {
+            console.error('EmailJS error:', err);
+            const detail = (err && err.text) ? err.text : (err && err.status ? 'Status ' + err.status : 'Unknown error');
+            errorBox.textContent = 'Failed to send: ' + detail + '. Check console for details.';
+            errorBox.style.display = 'block';
+            submitBtn.disabled = false;
+            submitText.textContent = 'Submit & Download APK';
+        });
+}
